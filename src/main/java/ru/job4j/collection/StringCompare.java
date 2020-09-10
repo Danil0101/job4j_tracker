@@ -12,9 +12,9 @@ public class StringCompare implements Comparator<String> {
             if (res != 0) {
                 break;
             }
-            if (i == size - 1 && left.length() != right.length()) {
-                res = left.length() > right.length() ? 1 : -1;
-            }
+        }
+        if (res == 0) {
+            res = Integer.compare(left.length(), right.length());
         }
         return res;
     }
