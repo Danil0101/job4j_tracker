@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 public class ItemTest {
 
     @Test
-    public void SortItemsAscending() {
+    public void sortItemsAscending() {
         List<Item> items = Arrays.asList(
                 new Item(3),
                 new Item(1),
@@ -24,7 +24,7 @@ public class ItemTest {
     }
 
     @Test
-    public void SortItemsDescending() {
+    public void sortItemsDescending() {
         List<Item> items = Arrays.asList(
                 new Item(3),
                 new Item(1),
