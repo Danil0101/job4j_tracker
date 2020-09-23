@@ -17,10 +17,11 @@ public class ProfilesTest {
         profiles.add(new Profile("Moscow", "Mira", 1, 1));
         profiles.add(new Profile("Kiev", "Mira", 1, 1));
         profiles.add(new Profile("Riga", "Mira", 1, 1));
+        profiles.add(new Profile("Kiev", "Mira", 1, 1));
     }
 
     @Test
-    public void getAddressFromProfile() {
+    public void getAddressFromProfileAndRemoveDuplicates() {
         List<Address> rsl = new Profiles().collect(profiles);
         List<Address> expected = List.of(
                 new Address("Kiev", "Mira", 1, 1),
