@@ -9,26 +9,26 @@ public class Job4jStream {
     private List<Object> list;
 
     public static class Of {
-        private Job4jStream newJob4jStream;
+        private Job4jStream jStream;
 
         public Of(Object... objects) {
-            newJob4jStream = new Job4jStream();
-            newJob4jStream.list = new ArrayList<>(Arrays.asList(objects));
+            jStream = new Job4jStream();
+            jStream.list = new ArrayList<>(Arrays.asList(objects));
         }
 
         public Of filter(Predicate<Object> predicate) {
             List<Object> newList = new ArrayList<>();
-            for (Object o : newJob4jStream.list) {
+            for (Object o : jStream.list) {
                 if (predicate.test(o)) {
                     newList.add(o);
                 }
             }
-            newJob4jStream.list = newList;
+            jStream.list = newList;
             return this;
         }
 
         public List<Object> collect() {
-            return newJob4jStream.list;
+            return jStream.list;
         }
     }
 }
