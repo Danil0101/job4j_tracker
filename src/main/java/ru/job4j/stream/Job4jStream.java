@@ -11,7 +11,7 @@ public class Job4jStream {
     public static class Of {
         private Job4jStream newJob4jStream;
 
-        public Of(Object ... objects) {
+        public Of(Object... objects) {
             newJob4jStream = new Job4jStream();
             newJob4jStream.list = new ArrayList<>(Arrays.asList(objects));
         }

@@ -11,7 +11,10 @@ public class Job4jStreamTest {
 
     @Test
     public void shouldGreaterThanZero() {
-        List<Object> actual = new Job4jStream.Of(-2, -1, 0, 1, 2, 3).filter(o -> (int) o > 0).collect();
+        List<Object> actual = new Job4jStream
+                .Of(-2, -1, 0, 1, 2, 3)
+                .filter(o -> (int) o > 0)
+                .collect();
         List<Object> expected = List.of(1, 2, 3);
         assertThat(actual, is(expected));
     }
