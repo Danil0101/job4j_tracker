@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 
 public class SqlTrackerTest {
 
-    static Connection connection;
+    private static Connection connection;
 
     @BeforeClass
     public static void initConnection() {
@@ -82,9 +82,11 @@ public class SqlTrackerTest {
     public void whenAddItemAndFindByNameThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
         String itemName = "itemName";
-        Item item = new Item(itemName);
-        tracker.add(item);
-        assertThat(tracker.findByName(itemName), is(List.of(item)));
+        Item item1 = new Item(itemName);
+        Item item2 = new Item(itemName);
+        tracker.add(item1);
+        tracker.add(item2);
+        assertThat(tracker.findByName(itemName), is(List.of(item1, item2)));
     }
 
     @Test
