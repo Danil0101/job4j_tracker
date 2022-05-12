@@ -20,11 +20,11 @@ public class CreateManyAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Store tracker) {
-        int amount_items = input.askInt("How many items to create?: ");
-        for (int i = 0; i < amount_items; i++) {
+        int amountItems = input.askInt("How many items to create?: ");
+        for (int i = 0; i < amountItems; i++) {
             tracker.add(new Item("name" + i));
         }
-        out.println("Added " + amount_items + " items");
+        out.println("Added " + amountItems + " items");
         return true;
     }
 }
